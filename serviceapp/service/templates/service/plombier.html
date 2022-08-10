@@ -1,0 +1,23 @@
+{% extends 'pageacc/index.html' %}
+
+{% block title %} Inscription {% endblock %}
+
+{% block content %}
+    <ul>
+        {% for main_o in main_os %}
+        {% if main_o.type_service == 'Plombier' %}
+            <div class="card" style="width: 18rem;">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                        <h5 class="card-title">{{ main_o.nom }}</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Commander</a>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}

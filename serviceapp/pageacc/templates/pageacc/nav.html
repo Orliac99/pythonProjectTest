@@ -1,0 +1,63 @@
+
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-success">-->
+<!--  <div class="container-fluid">-->
+<!--    <a class="navbar-brand">ServiceApp</a>-->
+<!--    <button-->
+<!--      class="navbar-toggler"-->
+<!--      type="button"-->
+<!--      data-mdb-toggle="collapse"-->
+<!--      data-mdb-target="#navbarTogglerDemo02"-->
+<!--      aria-controls="navbarTogglerDemo02"-->
+<!--      aria-expanded="false"-->
+<!--      aria-label="Toggle navigation">-->
+<!--      <i class="fas fa-bars"></i>-->
+<!--    </button>-->
+<!--    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">-->
+<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" href="#">Home</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active" href="#">Service</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active">A propos</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link active">Contact</a>-->
+<!--        </li>-->
+<!--      </ul>-->
+<!--      <div class="d-flex align-items-center">-->
+<!--        <button type="button" class="btn btn-link px-3 me-2">-->
+<!--          Connexion-->
+<!--        </button>-->
+<!--        <button type="button" class="btn btn-link me-3">-->
+<!--          Inscription-->
+<!--        </button>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</nav>-->
+<nav class="navbar navbar-expand-md navbar-light" style="background-color:rgb(77, 208, 225);">
+  <h3>ServiceApp</h3>
+  <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-between" id="nav">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link px-3" href="{% url 'index' %}">Home</a></li>
+      <li class="nav-item"><a class="nav-link px-3" href="{% url 'service' %}">Service</a></li>
+      <li class="nav-item"><a class="nav-link px-3" href="http://">A propos</a></li>
+      <li class="nav-item"><a class="nav-link px-3" href="http://">Contact</a></li>
+    </ul>
+    <ul class="navbar-nav">
+      {% if user.is_authenticated != user.is_superuser %}
+<!--      <li class="nav-item ml-3"><a class="nav-link btn btn-light" href="{% url 'logout' %}" role="button">Deconnexion</a></li>-->
+      <li class="nav-item ml-3"><a class="nav-link btn btn-light" href="{% url 'logout' %}" role="button">Deconnexion</a></li>
+      {% else %}
+      <li class="nav-item ml-3"><a class="nav-link btn btn-light" href="{% url 'login' %}" role="button">Connexion</a></li>
+      <li class="nav-item ml-3"><a class="nav-link btn btn-light" href="{% url 'register' %}" role="button"><i class="fa-solid fa-circle-user"></i>Inscription</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
